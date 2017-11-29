@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">GameTrade</string>
     <string name="admob_id">ca-app-pub-1093359201863282~5873148217</string>
+
+    <!-- Login Activity -->
+    <string name="email_hint_italic"><i>Enter Email</i></string>
+    <string name="password_hint_italic"><i>Enter Password</i></string>
+    <string name="email_textview">Your Email</string>
+    <string name="password_textview">Your Password</string>
+    <string name="login">Login</string>
+    <string name="sign_up">Sign up now</string>
 </resources>
