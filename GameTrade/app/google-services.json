@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "235282858879-ghpm9iqnj99u6953lau4bk38agn1m84g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "at.tkm.ld.gametrade",
+            "certificate_hash": "ec48254c528e0cb691b905830d7e3401e701b7c5"
+          }
+        },
+        {
           "client_id": "235282858879-bgbrnsbpckfsmk9lht4vv0qs1nqrl0aj.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "235282858879-bgbrnsbpckfsmk9lht4vv0qs1nqrl0aj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2

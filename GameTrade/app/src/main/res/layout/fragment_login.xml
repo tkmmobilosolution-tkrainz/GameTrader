@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
-        android:background="@drawable/bordered_blue"
+        android:background="@color/colorPrimary"
         android:ems="10"
         android:hint="@string/email_hint_italic"
         android:imeOptions="actionNext"
@@ -39,19 +39,18 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
-        android:background="@drawable/bordered_blue"
+        android:background="@color/colorPrimary"
         android:ems="10"
         android:hint="@string/password_hint_italic"
         android:imeOptions="actionDone"
         android:inputType="textPassword" />
 
     <Button
-        android:id="@+id/login"
-        style="@style/ButtonBorderBlue"
+        android:id="@+id/loginButton"
+        style="@style/ButtonFilledWhite"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:background="@drawable/bordered_blue"
         android:text="@string/login" />
 
     <Button
