@@ -6,7 +6,6 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/emailText"
         style="@style/TextViewBlue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -14,7 +13,7 @@
         android:text="@string/email_textview" />
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/registerEmail"
         style="@style/EditTextBlue"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -26,7 +25,6 @@
         android:inputType="textEmailAddress" />
 
     <TextView
-        android:id="@+id/passwordText"
         style="@style/TextViewBlue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -34,7 +32,26 @@
         android:text="@string/password_textview" />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/registerPassword"
+        style="@style/EditTextBlue"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorPrimary"
+        android:ems="10"
+        android:hint="@string/password_hint_italic"
+        android:imeOptions="actionDone"
+        android:inputType="textPassword" />
+
+    <TextView
+        style="@style/TextViewBlue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/password_textview" />
+
+    <EditText
+        android:id="@+id/registerPasswordCompare"
         style="@style/EditTextBlue"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -46,18 +63,11 @@
         android:inputType="textPassword" />
 
     <Button
-        android:id="@+id/loginButton"
+        android:id="@+id/registrationButton"
         style="@style/ButtonFilledWhite"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="@string/login" />
+        android:text="@string/register" />
 
-    <Button
-        android:id="@+id/registerButton"
-        style="@style/ButtonFilledBlue"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="@string/sign_up" />
 </LinearLayout>

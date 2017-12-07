@@ -2,37 +2,47 @@ package gametrade.ld.tkm.at.gametrade
 
 import android.app.Fragment
 import android.os.Bundle
-import android.support.annotation.NonNull
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthException
-import com.google.firebase.auth.FirebaseUser
 import com.jakewharton.rxbinding2.view.RxView
-import io.reactivex.internal.util.HalfSerializer.onComplete
+import io.reactivex.subjects.PublishSubject
+import io.reactivex.subjects.SingleSubject
 import kotlinx.android.synthetic.main.fragment_login.email
-import kotlinx.android.synthetic.main.fragment_login.emailText
 import kotlinx.android.synthetic.main.fragment_login.loginButton
 import kotlinx.android.synthetic.main.fragment_login.password
-import java.util.regex.Pattern
+import kotlinx.android.synthetic.main.fragment_login.registerButton
 
 /**
- * [Add class description here]
+ * Handles user login.
  *
  * Created 29.11.17
  *
- * @author Thomas Krainz-Mischitz (Level1 GmbH)
+ * @author Thomas Krainz-Mischitz
  * @version %I%, %G%
  */
 
 class LoginFragment : Fragment() {
 
+    /**
+     * The FirebaseAuth instance.
+     */
     val authentication = FirebaseAuth.getInstance()
+
+    /**
+     * The subject for notifying the caller about registrationButton click.
+     */
+    val registrationClicked = PublishSubject.create<Any>()
+
+    /**
+     * The subject for notifying the caller about successful sign in.
+     */
+    val loginUser = PublishSubject.create<Any>()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -44,6 +54,10 @@ class LoginFragment : Fragment() {
 
         RxView.clicks(loginButton).subscribe {
             loginUser()
+        }
+
+        RxView.clicks(registerButton).subscribe {
+            registrationClicked.onNext(it)
         }
     }
 
@@ -58,12 +72,14 @@ class LoginFragment : Fragment() {
             if (!task.isSuccessful) {
                 signInFailed(task)
             } else {
-                Toast.makeText(activity, "User loggin success", Toast.LENGTH_SHORT).show()
-                authentication.signOut()
+                loginUser.onNext("")
             }
         })
     }
 
+    /**
+     * Checks email validation an checks field for character length.
+     */
     private fun loginUser() {
         val emailAddress = email.text.toString()
         val password = password.text.toString()
@@ -81,6 +97,11 @@ class LoginFragment : Fragment() {
         loginFirebaseUser(emailAddress, password)
     }
 
+    /**
+     * Handling sign in failure with given task.
+     *
+     * @param task: The given task for getting error code.
+     */
     private fun signInFailed(task: Task<AuthResult>) {
         val exception = task.exception as FirebaseAuthException?
 
@@ -91,14 +112,6 @@ class LoginFragment : Fragment() {
             Toast.makeText(activity, "Wrong pasword", Toast.LENGTH_SHORT).show()
         } else {
             Toast.makeText(activity, "Default error", Toast.LENGTH_SHORT).show()
-        }
-    }
-
-    private fun checkUserState(user: FirebaseUser?) {
-        if (user != null) {
-            Toast.makeText(activity, "User valid", Toast.LENGTH_SHORT).show()
-        } else {
-            Toast.makeText(activity, "User null", Toast.LENGTH_SHORT).show()
         }
     }
 }

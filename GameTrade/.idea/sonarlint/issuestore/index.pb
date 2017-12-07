@@ -17,3 +17,9 @@ r
 Bapp/src/main/java/gametrade/ld/tkm/at/gametrade/StartupActivity.kt,9/b/9b443089f2d745841594c8092217acad1830c8af
 p
 @app/src/main/java/gametrade/ld/tkm/at/gametrade/LoginFragment.kt,9/e/9e1fb75ad3e845016b7f1df15da0b5e19bcb8fc5
+H
+app/google-services.json,f/d/fd8d34b142d02ec743a8efefefd2c097961666e9
+t
+Dapp/src/main/java/gametrade/ld/tkm/at/gametrade/String+Validation.kt,c/0/c015a5078ea5e5ac767938402d1276170e3f1be9
+s
+Capp/src/main/java/gametrade/ld/tkm/at/gametrade/RegisterFragment.kt,8/1/81093e13627649f8d44199a090b852a72cd73c6b

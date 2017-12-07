@@ -27,11 +27,10 @@ class StartupActivity : BaseActivity() {
 
             startActivityWithIntent(intent)
         }, 2000L)
-
     }
 
     /**
-     * Starts new Activity with given intent. Also calling finish().
+     * Starts new Activity with given intent..
      * @param intent The given intent to start.
      */
     private fun startActivityWithIntent(intent: Intent?) {
